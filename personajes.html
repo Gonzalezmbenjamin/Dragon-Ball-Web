@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guerreros Z, antagonistas por era y transformaciones interactivas de Goku, Vegeta, Gohan, Piccolo y Trunks.">
+  <meta name="theme-color" content="#07090d">
+  <title>Dragon Ball | Personajes</title>
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="CSS/estilos.css">
+</head>
+<body data-page="personajes">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="nav-wrap container">
+      <a class="brand" href="index.html" aria-label="Dragon Ball — Inicio">
+        <span class="brand-mark" aria-hidden="true"><img src="img/logo/esfera-4-estrellas.webp" alt="" width="256" height="256"></span>
+        <span class="brand-text">DRAGON <strong>BALL</strong></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainMenu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="mainMenu" aria-label="Navegación principal">
+          <a href="index.html" class="nav-link">Inicio</a>
+          <div class="nav-item-dropdown" data-dropdown>
+            <button type="button" class="nav-link nav-link-dropdown" id="universoToggle" aria-haspopup="true" aria-expanded="false" aria-controls="universoMenu">Universo <i class="fa-solid fa-chevron-down nav-caret" aria-hidden="true"></i></button>
+            <div class="nav-dropdown-menu" id="universoMenu" role="menu">
+              <a href="sagas.html" class="nav-dropdown-link" role="menuitem">Sagas</a>
+              <a href="peliculas.html" class="nav-dropdown-link" role="menuitem">Películas</a>
+              <a href="personajes.html#transformaciones" class="nav-dropdown-link" role="menuitem">Transformaciones</a>
+            </div>
+          </div>
+          <a href="personajes.html" class="nav-link active" aria-current="page">Personajes</a>
+          <a href="galeria.html" class="nav-link">Galería</a>
+          <a href="contacto.html" class="nav-link">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="page-hero page-hero-characters">
+      <div class="page-hero-lines" aria-hidden="true"></div>
+      <div class="container page-hero-layout">
+        <div class="page-hero-copy reveal">
+          <span class="meta-label">ROSTER · HÉROES Y ANTAGONISTAS</span>
+          <h1>Personajes</h1>
+          <p>Rivales, maestros, aliados y amenazas que convierten cada batalla en una historia personal.</p>
+        </div>
+        <div class="page-hero-art character-hero-art reveal reveal-delay-1" aria-hidden="true">
+          <div class="character-hero-stack stack-b">
+            <img src="img/personajes/vegeta.webp" alt="" width="1024" height="1536" decoding="async">
+          </div>
+          <div class="character-hero-stack stack-a">
+            <img src="img/personajes/goku.webp" alt="" width="1196" height="1315" fetchpriority="high" decoding="async">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="characters-catalog characters-heroes section">
+      <div class="container">
+        <div class="catalog-intro reveal">
+          <div><span class="meta-label">HÉROES</span><h2>Guerreros Z</h2></div>
+          <p>Los héroes que defendieron la Tierra, generación tras generación.</p>
+        </div>
+
+        <div class="character-wall character-wall-heroes">
+          <article class="premium-character premium-character-featured reveal" id="goku">
+            <div class="premium-character-image media-frame" data-fallback="Imagen no disponible"><img src="img/personajes/goku.webp" alt="Goku" width="1196" height="1315" loading="lazy" decoding="async"></div>
+            <div class="premium-character-copy"><span class="fighter-index">01 / 06</span><small>SAIYAJIN · TIERRA</small><h3>Goku</h3><p>Su mayor rasgo no es una transformación concreta, sino la necesidad permanente de aprender y ponerse a prueba.</p><div class="fighter-data"><span><b>ORIGEN</b> Planeta Vegeta</span><span><b>RASGO</b> Disciplina</span></div></div>
+          </article>
+          <article class="premium-character reveal reveal-delay-1" id="vegeta">
+            <div class="premium-character-image media-frame" data-fallback="Imagen no disponible"><img src="img/personajes/vegeta.webp" alt="Vegeta" width="1024" height="1536" loading="lazy" decoding="async"></div>
+            <div class="premium-character-copy"><span class="fighter-index">02 / 06</span><small>PRÍNCIPE SAIYAJIN</small><h3>Vegeta</h3><p>Orgullo, precisión y una rivalidad que termina funcionando como motor de crecimiento.</p><div class="fighter-data"><span><b>ORIGEN</b> Planeta Vegeta</span><span><b>RASGO</b> Voluntad</span></div><p class="fighter-note">Llegó a la Tierra como antagonista antes de unirse a los Guerreros Z.</p></div>
+          </article>
+          <article class="premium-character reveal reveal-delay-2" id="gohan">
+            <div class="premium-character-image media-frame" data-fallback="Imagen no disponible"><img src="img/personajes/gohan.webp" alt="Gohan" width="887" height="1774" loading="lazy" decoding="async"></div>
+            <div class="premium-character-copy"><span class="fighter-index">03 / 06</span><small>HÍBRIDO SAIYAJIN</small><h3>Gohan</h3><p>Un potencial enorme que convive con una personalidad menos orientada al combate.</p><div class="fighter-data"><span><b>ORIGEN</b> Tierra</span><span><b>RASGO</b> Potencial</span></div></div>
+          </article>
+          <article class="premium-character premium-character-wide reveal" id="piccolo">
+            <div class="premium-character-image media-frame" data-fallback="Imagen no disponible"><img src="img/personajes/piccolo.webp" alt="Piccolo" width="699" height="1024" loading="lazy" decoding="async"></div>
+            <div class="premium-character-copy"><span class="fighter-index">04 / 06</span><small>NAMEKIANO</small><h3>Piccolo</h3><p>Estrategia y serenidad. De antagonista a mentor, su desarrollo está marcado por la observación y la lealtad.</p><div class="fighter-data"><span><b>ORIGEN</b> Tierra / Namek</span><span><b>RASGO</b> Estrategia</span></div><p class="fighter-note">Reencarnación y sucesor del Rey Demonio Piccolo. Comenzó como antagonista de Goku y terminó convirtiéndose en aliado y mentor de Gohan.</p></div>
+          </article>
+          <article class="premium-character reveal reveal-delay-1" id="trunks">
+            <div class="premium-character-image media-frame" data-fallback="Imagen no disponible"><img src="img/personajes/trunks.webp" alt="Trunks" width="1181" height="1581" loading="lazy" decoding="async"></div>
+            <div class="premium-character-copy"><span class="fighter-index">05 / 06</span><small>GUERRERO DEL FUTURO</small><h3>Trunks</h3><p>La urgencia de un futuro devastado transforma su fuerza en una misión concreta: cambiar lo inevitable.</p><div class="fighter-data"><span><b>ORIGEN</b> Tierra</span><span><b>RASGO</b> Esperanza</span></div></div>
+          </article>
+          <article class="premium-character reveal reveal-delay-2" id="krillin">
+            <div class="premium-character-image media-frame" data-fallback="Imagen no disponible"><img src="img/personajes/krillin.webp" alt="Krillin" width="1024" height="1536" loading="lazy" decoding="async"></div>
+            <div class="premium-character-copy"><span class="fighter-index">06 / 06</span><small>GUERRERO TERRESTRE</small><h3>Krillin</h3><p>Sin sangre saiyajin, compensa con entrenamiento y una lealtad inquebrantable hacia sus amigos.</p><div class="fighter-data"><span><b>ORIGEN</b> Tierra</span><span><b>RASGO</b> Lealtad</span></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="characters-catalog characters-villains section">
+      <div class="container">
+        <div class="catalog-intro reveal">
+          <div><span class="meta-label">ANTAGONISTAS</span><h2>Amenazas que elevaron el poder</h2></div>
+          <p>Los antagonistas que empujaron a los guerreros Z a superar cada límite.</p>
+        </div>
+
+        <!-- ================= DRAGON BALL (3) ================= -->
+        <div class="villain-era" id="villanos-dragon-ball" data-era-kicker="01 / ORIGEN">
+          <div class="villain-era-head"><h3>Dragon Ball</h3><span>3 antagonistas</span></div>
+          <div class="character-wall character-wall-villains">
+            <article class="premium-character premium-character-organization reveal" id="redribbon">
+              <div class="premium-character-image media-frame" data-fallback="Imagen no disponible"><img src="img/villanos/red-ribbon.webp" alt="Patrulla Roja" width="1024" height="1523" loading="lazy" decoding="async"></div>
+              <div class="premium-character-copy"><span class="fighter-index">01 / 03</span><small>ORGANIZACIÓN CRIMINAL</small><h3>Patrulla Roja</h3><p>Una organización militar que persigue las Esferas del Dragón para dominar el mundo, enfrentando a Goku con soldados y armamento pesado.</p><div class="fighter-data"><span><b>ORIGEN</b> Global</span><span><b>RASGO</b> Poder militar</span></div></div>
+            </article>
+            <article class="premium-character reveal reveal-delay-1" id="taopaipai">
+              <div class="premium-character-image media-frame" data-fallback="Imagen no disponible"><img src="img/villanos/tao-pai-pai.webp" alt="Tao Pai Pai" width="1090" height="1443" loading="lazy" decoding="async"></div>
+              <div class="premium-character-copy"><span class="fighter-index">02 / 03</span><small>ASESINO A SUELDO</small><h3>Tao Pai Pai</h3><p>Un asesino de élite contratado por la Patrulla Roja para eliminar a quien se interponga en su búsqueda de las Esferas del Dragón.</p><div class="fighter-data"><span><b>ORIGEN</b> Escuela de la Grulla</span><span><b>RASGO</b> Frialdad profesional</span></div></div>
+            </article>
+            <article class="premium-character premium-character-featured reveal reveal-delay-2" id="piccolodaimao">
+              <div class="premium-character-image media-frame" data-fallback="Imagen no disponible"><img src="img/villanos/piccolo-daimao.webp" alt="Rey Demonio Piccolo" width="1024" height="1536" loading="lazy" decoding="async"></div>
+              <div class="premium-character-copy"><span class="fighter-index">03 / 03</span><small>DEMONIO ANCESTRAL</small><h3>Rey Demonio Piccolo</h3><p>El gran antagonista del Dragon Ball original: la maldad expulsada del ser que aspiraba a convertirse en Kami, liberada como una entidad propia que sembró el terror durante siglos.</p><div class="fighter-data"><span><b>ORIGEN</b> Mitad maligna de Kami</span><span><b>RASGO</b> Terror ancestral</span></div></div>
+            </article>
+          </div>
+        </div>
+
+        <!-- ================= DRAGON BALL Z (7) ================= -->
+        <div class="villain-era" id="villanos-dragon-ball-z" data-era-kicker="02 / ESCALADA">
+          <div class="villain-era-head"><h3>Dragon Ball Z</h3><span>7 antagonistas</span></div>
+          <div class="character-wall character-wall-villains">
+            <article class="premium-character reveal" id="raditz">
+              <div class="premium-character-image media-frame" data-fallback="Imagen no disponible"><img src="img/villanos/raditz.webp" alt="Raditz" width="914" height="1800" loading="lazy" decoding="async"></div>
+              <div class="premium-character-copy"><span class="fighter-index">01 / 07</span><small>SAIYAJIN</small><h3>Raditz</h3><p>El hermano mayor de Goku, cuya llegada a la Tierra revela el origen saiyajin del héroe y desata el primer gran conflicto de la saga.</p><div class="fighter-data"><span><b>ORIGEN</b> Planeta Vegeta</span><span><b>RASGO</b> Crueldad familiar</span></div></div>
+            </article>
+            <article class="premium-character reveal reveal-delay-1" id="nappa">
+              <div class="premium-character-image media-frame" data-fallback="Imagen no disponible"><img src="img/villanos/nappa.webp" alt="Nappa" width="660" height="1211" loading="lazy" decoding="async"></div>
+              <div class="premium-character-copy"><span class="fighter-index">02 / 07</span><small>SAIYAJIN DE ÉLITE</small><h3>Nappa</h3><p>Guerrero saiyajin de gran poder físico que acompaña a Vegeta en la invasión de la Tierra.</p><div class="fighter-data"><span><b>ORIGEN</b> Planeta Vegeta</span><span><b>RASGO</b> Fuerza bruta</span></div></div>
+            </article>
+            <article class="premium-character premium-character-featured reveal reveal-delay-2" id="freezer">
+              <div class="premium-character-image media-frame" data-fallback="Imagen no disponible"><img src="img/villanos/freezer.webp" alt="Freezer" width="774" height="1033" loading="lazy" decoding="async"></div>
+              <div class="premium-character-copy"><span class="fighter-index">03 / 07</span><small>EMPERADOR GALÁCTICO</small><h3>Freezer</h3><p>Una amenaza construida desde el control, la crueldad y una confianza casi absoluta en su poder. Cuenta con el respaldo de la Fuerza Ginyu, su escuadrón de élite.</p><div class="fighter-data"><span><b>ORIGEN</b> Desconocido</span><span><b>RASGO</b> Dominio</span></div></div>
+            </article>
+            <article class="premium-character reveal" id="drgero">
+              <div class="premium-character-image media-frame" data-fallback="Imagen no disponible"><img src="img/villanos/dr-gero.webp" alt="Dr. Gero / Androide 20" width="530" height="806" loading="lazy" decoding="async"></div>
+              <div class="premium-character-copy"><span class="fighter-index">04 / 07</span><small>CIENTÍFICO CONVERTIDO EN ANDROIDE</small><h3>Dr. Gero / Androide 20</h3><p>Científico jefe del Ejército Red Ribbon y responsable del desarrollo de los Androides. Se convierte a sí mismo en el Androide 20 para vengarse de Goku.</p><div class="fighter-data"><span><b>ORIGEN</b> Ejército Red Ribbon</span><span><b>RASGO</b> Venganza calculada</span></div></div>
+            </article>
+            <article class="premium-character premium-character-wide reveal reveal-delay-1" id="cell">
+              <div class="premium-character-image media-frame" data-fallback="Imagen no disponible"><img src="img/villanos/cell.webp" alt="Cell" width="1024" height="1536" loading="lazy" decoding="async"></div>
+              <div class="premium-character-copy"><span class="fighter-index">05 / 07</span><small>BIOANDROIDE PERFECTO</small><h3>Cell</h3><p>Diseñado para absorber el poder ajeno, convierte cada combate en una prueba sobre su propia perfección.</p><div class="fighter-data"><span><b>ORIGEN</b> Laboratorio Red Ribbon</span><span><b>RASGO</b> Obsesión</span></div></div>
+            </article>
+            <article class="premium-character reveal reveal-delay-2" id="babididabura">
+              <div class="premium-character-image media-frame" data-fallback="Imagen no disponible"><img src="img/villanos/babidi-dabura.webp" alt="Babidi y Dabura" width="1086" height="1448" loading="lazy" decoding="async"></div>
+              <div class="premium-character-copy"><span class="fighter-index">06 / 07</span><small>HECHICERO Y REY DEMONIO</small><h3>Babidi / Dabura</h3><p>Un hechicero heredero de Bibidi que libera a Majin Buu, con el Rey Demonio Dabura como su brazo ejecutor.</p><div class="fighter-data"><span><b>ORIGEN</b> Desconocido</span><span><b>RASGO</b> Manipulación</span></div></div>
+            </article>
+            <article class="premium-character premium-character-wide reveal" id="majinbuu">
+              <div class="premium-character-image media-frame" data-fallback="Imagen no disponible"><img src="img/villanos/majin-buu.webp" alt="Majin Buu" width="382" height="1024" loading="lazy" decoding="async"></div>
+              <div class="premium-character-copy"><span class="fighter-index">07 / 07</span><small>ENTIDAD MÁGICA ANCESTRAL</small><h3>Majin Buu / Kid Buu</h3><p>Poder puro y sin filtro. En su forma original, Kid Buu, es capaz de una destrucción absoluta sin ningún tipo de contención.</p><div class="fighter-data"><span><b>ORIGEN</b> Desconocido</span><span><b>RASGO</b> Caos</span></div></div>
+            </article>
+          </div>
+        </div>
+
+        <!-- ================= DRAGON BALL SUPER (4) ================= -->
+        <div class="villain-era" id="villanos-dragon-ball-super" data-era-kicker="03 / MULTIVERSO">
+          <div class="villain-era-head"><h3>Dragon Ball Super</h3><span>4 antagonistas</span></div>
+          <div class="character-wall character-wall-villains">
+            <article class="premium-character premium-character-featured reveal" id="gokublack">
+              <div class="premium-character-image media-frame" data-fallback="Imagen no disponible"><img src="img/villanos/goku-black.webp" alt="Goku Black y Zamasu" width="1024" height="1536" loading="lazy" decoding="async"></div>
+              <div class="premium-character-copy"><span class="fighter-index">01 / 04</span><small>ZAMASU EN EL CUERPO DE GOKU</small><h3>Goku Black / Zamasu</h3><p>Usa el rostro de un héroe para justificar una idea extrema de justicia: eliminar a la humanidad mortal.</p><div class="fighter-data"><span><b>ORIGEN</b> Universo 10</span><span><b>RASGO</b> Fanatismo</span></div></div>
+            </article>
+            <article class="premium-character premium-character-wide reveal reveal-delay-1" id="moro">
+              <div class="premium-character-image media-frame" data-fallback="Imagen no disponible"><img src="img/villanos/moro.webp" alt="Moro" width="870" height="1120" loading="lazy" decoding="async"></div>
+              <div class="premium-character-copy"><span class="fighter-index">02 / 04</span><small>HECHICERO INTERGALÁCTICO</small><h3>Moro</h3><p>Un criminal cósmico milenario liberado de prisión que devora planetas enteros absorbiendo la energía vital de sus habitantes.</p><div class="fighter-data"><span><b>ORIGEN</b> Desconocido</span><span><b>RASGO</b> Absorción vital</span></div></div>
+            </article>
+            <article class="premium-character reveal reveal-delay-2" id="gasheeters">
+              <div class="premium-character-image media-frame" data-fallback="Imagen no disponible"><img src="img/villanos/gas-heeters.webp" alt="Gas y los Heeters" width="1416" height="1071" loading="lazy" decoding="async"></div>
+              <div class="premium-character-copy"><span class="fighter-index">03 / 04</span><small>MERCENARIOS GALÁCTICOS</small><h3>Elec / Gas y los Heeters</h3><p>Elec manipula a Granolah para enfrentarlo contra Goku y Vegeta, usando a Gas como su arma principal mientras persigue sus propios planes de poder.</p><div class="fighter-data"><span><b>ORIGEN</b> Espacio exterior</span><span><b>RASGO</b> Ambición</span></div></div>
+            </article>
+            <article class="premium-character reveal" id="cellmax">
+              <div class="premium-character-image media-frame" data-fallback="Imagen no disponible"><img src="img/villanos/cell-max.webp" alt="Cell Max" width="1246" height="1263" loading="lazy" decoding="async"></div>
+              <div class="premium-character-copy"><span class="fighter-index">04 / 04</span><small>NUEVA PATRULLA ROJA</small><h3>Cell Max / Nueva Patrulla Roja</h3><p>El Dr. Hedo desarrolla a Gamma 1, Gamma 2 y Cell Max; Magenta impulsa el proyecto y termina activando a Cell Max, una bioforma sin inteligencia que la controle.</p><div class="fighter-data"><span><b>ORIGEN</b> Patrulla Roja (revivida)</span><span><b>RASGO</b> Destrucción descontrolada</span></div></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="transform-experience section" id="transformaciones" data-form="ssj">
+      <div class="transform-background" aria-hidden="true"></div>
+      <div class="container">
+        <div class="transform-header reveal">
+          <div><span class="meta-label">FORMAS DE PODER</span><h2>Transformaciones</h2></div>
+          <p>Elegí un personaje y recorré sus transformaciones: cabello, aura, energía y atmósfera responden a cada estado.</p>
+        </div>
+        <div class="transform-console reveal" id="transformConsole">
+          <div class="transform-step">
+            <p class="transform-step-label"><span>01</span> Elegí un personaje</p>
+            <div class="character-chips" role="tablist" aria-label="Elegir personaje">
+            <button class="character-chip active" type="button" role="tab" aria-selected="true" aria-controls="transformStage" tabindex="0" data-character="goku">
+              <span class="character-chip-portrait media-frame" data-fallback="Imagen no disponible"><img src="img/personajes/goku-selector.webp" alt="" loading="lazy" width="800" height="800" decoding="async"></span>
+              <span class="character-chip-name">Goku</span>
+            </button>
+            <button class="character-chip" type="button" role="tab" aria-selected="false" aria-controls="transformStage" tabindex="-1" data-character="vegeta">
+              <span class="character-chip-portrait media-frame" data-fallback="Imagen no disponible"><img src="img/personajes/vegeta-selector.webp" alt="" loading="lazy" width="1024" height="1536" decoding="async"></span>
+              <span class="character-chip-name">Vegeta</span>
+            </button>
+            <button class="character-chip" type="button" role="tab" aria-selected="false" aria-controls="transformStage" tabindex="-1" data-character="gohan">
+              <span class="character-chip-portrait media-frame" data-fallback="Imagen no disponible"><img src="img/personajes/gohan-selector.webp" alt="" loading="lazy" width="800" height="800" decoding="async"></span>
+              <span class="character-chip-name">Gohan</span>
+            </button>
+            <button class="character-chip" type="button" role="tab" aria-selected="false" aria-controls="transformStage" tabindex="-1" data-character="piccolo">
+              <span class="character-chip-portrait media-frame" data-fallback="Imagen no disponible"><img src="img/personajes/piccolo-selector.webp" alt="" loading="lazy" width="800" height="800" decoding="async"></span>
+              <span class="character-chip-name">Piccolo</span>
+            </button>
+            <button class="character-chip" type="button" role="tab" aria-selected="false" aria-controls="transformStage" tabindex="-1" data-character="trunks">
+              <span class="character-chip-portrait media-frame" data-fallback="Imagen no disponible"><img src="img/personajes/trunks-selector.webp" alt="" loading="lazy" width="1181" height="1581" decoding="async"></span>
+              <span class="character-chip-name">Trunks</span>
+            </button>
+            </div>
+          </div>
+          <div class="transform-step transform-step-forms">
+            <p class="transform-step-label"><span>02</span> Elegí una transformación</p>
+          </div>
+          <div class="transform-body">
+            <div class="transform-menu" id="transformMenu" role="tablist" aria-label="Transformaciones disponibles"></div>
+            <div class="transform-stage" id="transformStage" role="tabpanel" aria-live="polite">
+              <div class="transform-rings" aria-hidden="true"><span></span><span></span><span></span></div>
+              <div class="transform-figure media-frame" data-fallback="Imagen no disponible"><img id="transformImage" src="" alt="" loading="lazy" decoding="async"></div>
+              <div class="transform-panel">
+                <span id="transformCode"></span><h3 id="transformName"></h3><p id="transformDescription"></p>
+                <div class="transform-status"><small>TIPO DE KI</small><strong id="transformKi"></strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-glow" aria-hidden="true"></div>
+    <div class="container footer-top">
+      <div class="footer-about">
+        <a class="brand footer-brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true"><img src="img/logo/esfera-4-estrellas.webp" alt="" width="256" height="256"></span>
+          <span class="brand-text">DRAGON <strong>BALL</strong></span>
+        </a>
+        <p>Proyecto académico de programación web inspirado en Dragon Ball. Sitio fan-made, sin fines comerciales y no oficial.</p>
+      </div>
+      <div class="footer-nav" aria-label="Navegación secundaria">
+        <span>Explorar</span>
+        <a href="index.html">Inicio</a>
+        <a href="sagas.html">Sagas</a>
+        <a href="personajes.html">Personajes</a>
+        <a href="peliculas.html">Películas</a>
+        <a href="galeria.html">Galería</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+      <div class="footer-social">
+        <span>Redes</span>
+        <div class="socials" aria-label="Redes sociales">
+          <a href="https://x.com/DB_official_en" aria-label="X oficial de Dragon Ball" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/@dragonball_official" aria-label="YouTube oficial de Dragon Ball" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+          <a href="https://es.dragon-ball-official.com/" aria-label="Sitio oficial de Dragon Ball" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-globe" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span data-current-year>2026</span> Proyecto Dragon Ball</span>
+      <span>Sitio fan-made · Proyecto académico · No oficial</span>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>

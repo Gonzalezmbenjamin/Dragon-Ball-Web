@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Las 21 películas animadas de Dragon Ball, Dragon Ball Z y Dragon Ball Super, organizadas por etapa.">
+  <meta name="theme-color" content="#07090d">
+  <title>Dragon Ball | Películas</title>
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="CSS/estilos.css">
+</head>
+<body data-page="peliculas">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="nav-wrap container">
+      <a class="brand" href="index.html" aria-label="Dragon Ball — Inicio">
+        <span class="brand-mark" aria-hidden="true"><img src="img/logo/esfera-4-estrellas.webp" alt="" width="256" height="256"></span>
+        <span class="brand-text">DRAGON <strong>BALL</strong></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainMenu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="mainMenu" aria-label="Navegación principal">
+          <a href="index.html" class="nav-link">Inicio</a>
+          <div class="nav-item-dropdown active" data-dropdown>
+            <button type="button" class="nav-link nav-link-dropdown active" id="universoToggle" aria-haspopup="true" aria-expanded="false" aria-controls="universoMenu">Universo <i class="fa-solid fa-chevron-down nav-caret" aria-hidden="true"></i></button>
+            <div class="nav-dropdown-menu" id="universoMenu" role="menu">
+              <a href="sagas.html" class="nav-dropdown-link" role="menuitem">Sagas</a>
+              <a href="peliculas.html" class="nav-dropdown-link active" aria-current="page" role="menuitem">Películas</a>
+              <a href="personajes.html#transformaciones" class="nav-dropdown-link" role="menuitem">Transformaciones</a>
+            </div>
+          </div>
+          <a href="personajes.html" class="nav-link">Personajes</a>
+          <a href="galeria.html" class="nav-link">Galería</a>
+          <a href="contacto.html" class="nav-link">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="page-hero page-hero-movies">
+      <div class="page-hero-lines" aria-hidden="true"></div>
+      <div class="container page-hero-layout">
+        <div class="page-hero-copy reveal">
+          <span class="meta-label">1986 — 2022 · 21 FILMES</span>
+          <h1>Películas</h1>
+          <p>Más de tres décadas de batallas en la gran pantalla.</p>
+        </div>
+        <div class="movie-hero-posters reveal" aria-hidden="true">
+          <figure class="movie-hero-poster movie-hero-poster--classic">
+            <img src="img/peliculas/curse-of-the-blood-rubies.webp" alt="" width="702" height="1175" decoding="async">
+          </figure>
+          <figure class="movie-hero-poster movie-hero-poster--z">
+            <img src="img/peliculas/battle-of-gods.webp" alt="" width="1200" height="1699" decoding="async" fetchpriority="high">
+          </figure>
+          <figure class="movie-hero-poster movie-hero-poster--super">
+            <img src="img/peliculas/super-hero.webp" alt="" width="1255" height="1800" decoding="async">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="movies-catalog section">
+      <div class="container">
+        <div class="movie-filter" role="tablist" aria-label="Filtrar películas por etapa" data-movie-filter>
+          <button class="movie-filter-btn active" type="button" role="tab" aria-selected="true" data-filter="todas">TODAS</button>
+          <button class="movie-filter-btn" type="button" role="tab" aria-selected="false" data-filter="dragon-ball">DRAGON BALL</button>
+          <button class="movie-filter-btn" type="button" role="tab" aria-selected="false" data-filter="dragon-ball-z">DRAGON BALL Z</button>
+          <button class="movie-filter-btn" type="button" role="tab" aria-selected="false" data-filter="dragon-ball-super">DRAGON BALL SUPER</button>
+        </div>
+
+        <!-- ================= DRAGON BALL (4) ================= -->
+        <section class="movie-era" data-movie-era="dragon-ball">
+          <div class="movie-era-head"><h2>Dragon Ball</h2><span>4 películas · 1986–1996</span></div>
+          <div class="movie-grid">
+
+            <article class="movie-card" id="curse-of-the-blood-rubies">
+              <div class="movie-poster-frame media-frame" data-fallback="Imagen no disponible">
+                <img src="img/peliculas/curse-of-the-blood-rubies.webp" alt="Póster de Dragon Ball: La leyenda de Shenlong" loading="lazy" width="702" height="1175" decoding="async">
+              </div>
+              <div class="movie-card-body">
+                <span class="movie-year">1986</span>
+                <h3>La leyenda de Shenlong</h3>
+                <p>Una versión alternativa del primer encuentro de Goku con Bulma en la búsqueda de las Esferas del Dragón.</p>
+                <span class="movie-villain">Antagonista: <strong>Rey Gurumes</strong></span>
+              </div>
+            </article>
+
+            <article class="movie-card" id="sleeping-princess">
+              <div class="movie-poster-frame media-frame" data-fallback="Imagen no disponible">
+                <img src="img/peliculas/sleeping-princess.webp" alt="Póster de Dragon Ball: La bella durmiente del castillo del mal" loading="lazy" width="310" height="420" decoding="async">
+              </div>
+              <div class="movie-card-body">
+                <span class="movie-year">1987</span>
+                <h3>La bella durmiente del castillo del mal</h3>
+                <p>Goku y sus amigos exploran un castillo maldito en busca de una esfera y de una princesa hechizada.</p>
+                <span class="movie-villain">Antagonista: <strong>Lucifer</strong></span>
+              </div>
+            </article>
+
+            <article class="movie-card" id="mystical-adventure">
+              <div class="movie-poster-frame media-frame" data-fallback="Imagen no disponible">
+                <img src="img/peliculas/mystical-adventure.webp" alt="Póster de Dragon Ball: Aventura mística" loading="lazy" width="620" height="861" decoding="async">
+              </div>
+              <div class="movie-card-body">
+                <span class="movie-year">1988</span>
+                <h3>Aventura mística</h3>
+                <p>Un torneo organizado por un emperador caprichoso esconde una trama del ejército Red Ribbon.</p>
+                <span class="movie-villain">Antagonista: <strong>General Tao</strong></span>
+              </div>
+            </article>
+
+            <article class="movie-card" id="path-to-power">
+              <div class="movie-poster-frame media-frame" data-fallback="Imagen no disponible">
+                <img src="img/peliculas/path-to-power.webp" alt="Póster de Dragon Ball: Camino hacia el poder" loading="lazy" width="619" height="876" decoding="async">
+              </div>
+              <div class="movie-card-body">
+                <span class="movie-year">1996</span>
+                <h3>Camino hacia el poder</h3>
+                <p>Un repaso condensado a la infancia de Goku, pensado como puerta de entrada al universo Dragon Ball.</p>
+                <span class="movie-villain">Antagonista: <strong>Rey Gasshan</strong></span>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- ================= DRAGON BALL Z (15) ================= -->
+        <section class="movie-era" data-movie-era="dragon-ball-z">
+          <div class="movie-era-head"><h2>Dragon Ball Z</h2><span>15 películas · 1989–2015</span></div>
+          <div class="movie-grid">
+
+            <article class="movie-card" id="dead-zone">
+              <div class="movie-poster-frame media-frame" data-fallback="Imagen no disponible">
+                <img src="img/peliculas/dead-zone.webp" alt="Póster de Dragon Ball Z: Devuélveme a mi Gohan" loading="lazy" width="500" height="706" decoding="async">
+              </div>
+              <div class="movie-card-body">
+                <span class="movie-year">1989</span>
+                <h3>Devuélveme a mi Gohan</h3>
+                <p>Un antiguo enemigo de Kamisama secuestra a Gohan para conseguir la inmortalidad.</p>
+                <span class="movie-villain">Antagonista: <strong>Garlic Jr.</strong></span>
+              </div>
+            </article>
+
+            <article class="movie-card" id="worlds-strongest">
+              <div class="movie-poster-frame media-frame" data-fallback="Imagen no disponible">
+                <img src="img/peliculas/worlds-strongest.webp" alt="Póster de Dragon Ball Z: El hombre más fuerte del mundo" loading="lazy" width="347" height="576" decoding="async">
+              </div>
+              <div class="movie-card-body">
+                <span class="movie-year">1990</span>
+                <h3>El hombre más fuerte del mundo</h3>
+                <p>Un científico busca apoderarse del cuerpo de Goku para continuar sus experimentos.</p>
+                <span class="movie-villain">Antagonista: <strong>Dr. Wheelo</strong></span>
+              </div>
+            </article>
+
+            <article class="movie-card" id="tree-of-might">
+              <div class="movie-poster-frame media-frame" data-fallback="Imagen no disponible">
+                <img src="img/peliculas/tree-of-might.webp" alt="Póster de Dragon Ball Z: El árbol del poder" loading="lazy" width="732" height="1047" decoding="async">
+              </div>
+              <div class="movie-card-body">
+                <span class="movie-year">1990</span>
+                <h3>El árbol del poder</h3>
+                <p>Un saiyajin de aspecto casi idéntico a Goku busca sembrar un árbol que drena la vida del planeta.</p>
+                <span class="movie-villain">Antagonista: <strong>Turles</strong></span>
+              </div>
+            </article>
+
+            <article class="movie-card" id="lord-slug">
+              <div class="movie-poster-frame media-frame" data-fallback="Imagen no disponible">
+                <img src="img/peliculas/lord-slug.webp" alt="Póster de Dragon Ball Z: Lord Slug" loading="lazy" width="960" height="1440" decoding="async">
+              </div>
+              <div class="movie-card-body">
+                <span class="movie-year">1991</span>
+                <h3>Lord Slug</h3>
+                <p>Un súper namekiano gigante ataca la Tierra buscando las Esferas del Dragón para recuperar su juventud.</p>
+                <span class="movie-villain">Antagonista: <strong>Lord Slug</strong></span>
+              </div>
+            </article>
+
+            <article class="movie-card" id="coolers-revenge">
+              <div class="movie-poster-frame media-frame" data-fallback="Imagen no disponible">
+                <img src="img/peliculas/coolers-revenge.webp" alt="Póster de Dragon Ball Z: Los rivales más poderosos" loading="lazy" width="500" height="706" decoding="async">
+              </div>
+              <div class="movie-card-body">
+                <span class="movie-year">1991</span>
+                <h3>Los rivales más poderosos</h3>
+                <p>El hermano mayor de Freezer llega a la Tierra para vengar el honor de su familia.</p>
+                <span class="movie-villain">Antagonista: <strong>Cooler</strong></span>
+              </div>
+            </article>
+
+            <article class="movie-card" id="return-of-cooler">
+              <div class="movie-poster-frame media-frame" data-fallback="Imagen no disponible">
+                <img src="img/peliculas/return-of-cooler.webp" alt="Póster de Dragon Ball Z: El regreso de Cooler" loading="lazy" width="840" height="1200" decoding="async">
+              </div>
+              <div class="movie-card-body">
+                <span class="movie-year">1992</span>
+                <h3>El regreso de Cooler</h3>
+                <p>Reconstruido como una máquina, Cooler regresa para tomar el control de un planeta agrícola.</p>
+                <span class="movie-villain">Antagonista: <strong>Cooler (Metal Cooler)</strong></span>
+              </div>
+            </article>
+
+            <article class="movie-card" id="super-android-13">
+              <div class="movie-poster-frame media-frame" data-fallback="Imagen no disponible">
+                <img src="img/peliculas/super-android-13.webp" alt="Póster de Dragon Ball Z: Choque, guerreros de poder infinito" loading="lazy" width="1536" height="2048" decoding="async">
+              </div>
+              <div class="movie-card-body">
+                <span class="movie-year">1992</span>
+                <h3>Choque, guerreros de poder infinito</h3>
+                <p>Restos del ejército Red Ribbon activan tres androides programados para eliminar a Goku.</p>
+                <span class="movie-villain">Antagonista: <strong>Androide 13</strong></span>
+              </div>
+            </article>
+
+            <article class="movie-card" id="broly-legendary-ssj">
+              <div class="movie-poster-frame media-frame" data-fallback="Imagen no disponible">
+                <img src="img/peliculas/broly-legendary-ssj.webp" alt="Póster de Dragon Ball Z: El Súper Saiyajin legendario" loading="lazy" width="380" height="537" decoding="async">
+              </div>
+              <div class="movie-card-body">
+                <span class="movie-year">1993</span>
+                <h3>El Súper Saiyajin legendario</h3>
+                <p>La primera aparición de Broly, un saiyajin nacido con un poder descomunal y un odio antiguo hacia Goku.</p>
+                <span class="movie-villain">Antagonista: <strong>Broly</strong></span>
+              </div>
+            </article>
+
+            <article class="movie-card" id="bojack-unbound">
+              <div class="movie-poster-frame media-frame" data-fallback="Imagen no disponible">
+                <img src="img/peliculas/bojack-unbound.webp" alt="Póster de Dragon Ball Z: Los guerreros de plata" loading="lazy" width="840" height="1200" decoding="async">
+              </div>
+              <div class="movie-card-body">
+                <span class="movie-year">1993</span>
+                <h3>Los guerreros de plata</h3>
+                <p>Un guerrero espacial sellado hace siglos despierta durante el Torneo de las Artes Marciales.</p>
+                <span class="movie-villain">Antagonista: <strong>Bojack</strong></span>
+              </div>
+            </article>
+
+            <article class="movie-card" id="broly-second-coming">
+              <div class="movie-poster-frame media-frame" data-fallback="Imagen no disponible">
+                <img src="img/peliculas/broly-second-coming.webp" alt="Póster de Dragon Ball Z: El regreso de Broly" loading="lazy" width="1536" height="2048" decoding="async">
+              </div>
+              <div class="movie-card-body">
+                <span class="movie-year">1994</span>
+                <h3>El regreso de Broly</h3>
+                <p>Broly reaparece y amenaza a Gohan, Goten y Trunks en una isla helada.</p>
+                <span class="movie-villain">Antagonista: <strong>Broly</strong></span>
+              </div>
+            </article>
+
+            <article class="movie-card" id="bio-broly">
+              <div class="movie-poster-frame media-frame" data-fallback="Imagen no disponible">
+                <img src="img/peliculas/bio-broly.webp" alt="Póster de Dragon Ball Z: Bio-Broly" loading="lazy" width="1536" height="2048" decoding="async">
+              </div>
+              <div class="movie-card-body">
+                <span class="movie-year">1994</span>
+                <h3>Bio-Broly</h3>
+                <p>Un clon biológico de Broly es creado por un científico rencoroso con Mr. Satán.</p>
+                <span class="movie-villain">Antagonista: <strong>Bio-Broly</strong></span>
+              </div>
+            </article>
+
+            <article class="movie-card" id="fusion-reborn">
+              <div class="movie-poster-frame media-frame" data-fallback="Imagen no disponible">
+                <img src="img/peliculas/fusion-reborn.webp" alt="Póster de Dragon Ball Z: El renacimiento de la fusión" loading="lazy" width="500" height="706" decoding="async">
+              </div>
+              <div class="movie-card-body">
+                <span class="movie-year">1995</span>
+                <h3>El renacimiento de la fusión</h3>
+                <p>Un ser maligno nacido del Más Allá amenaza con fusionar los mundos vivo y muerto.</p>
+                <span class="movie-villain">Antagonista: <strong>Janemba</strong></span>
+              </div>
+            </article>
+
+            <article class="movie-card" id="wrath-of-the-dragon">
+              <div class="movie-poster-frame media-frame" data-fallback="Imagen no disponible">
+                <img src="img/peliculas/wrath-of-the-dragon.webp" alt="Póster de Dragon Ball Z: El ataque del dragón" loading="lazy" width="835" height="1200" decoding="async">
+              </div>
+              <div class="movie-card-body">
+                <span class="movie-year">1995</span>
+                <h3>El ataque del dragón</h3>
+                <p>Un ser liberado de una vasija oculta esconde un plan para desatar a un dragón oscuro.</p>
+                <span class="movie-villain">Antagonista: <strong>Hoi y el Dragón Oscuro</strong></span>
+              </div>
+            </article>
+
+
+            <article class="movie-card" id="battle-of-gods">
+              <div class="movie-poster-frame media-frame" data-fallback="Imagen no disponible">
+                <img src="img/peliculas/battle-of-gods.webp" alt="Póster de Dragon Ball Z: La batalla de los dioses" loading="lazy" width="1200" height="1699" decoding="async">
+              </div>
+              <div class="movie-card-body">
+                <span class="movie-year">2013</span>
+                <h3>La batalla de los dioses</h3>
+                <p>El Dios de la Destrucción Beerus despierta y pone a prueba a Goku en busca de un Super Saiyajin Dios.</p>
+                <span class="movie-villain">Antagonista: <strong>Beerus</strong></span>
+              </div>
+            </article>
+
+
+            <article class="movie-card movie-card-featured" id="resurrection-f">
+              <div class="movie-poster-frame media-frame" data-fallback="Imagen no disponible">
+                <img src="img/peliculas/resurrection-f.webp" alt="Póster de Dragon Ball Z: La resurrección de F" loading="lazy" width="500" height="706" decoding="async">
+              </div>
+              <div class="movie-card-body">
+                <span class="movie-year">2015</span>
+                <h3>La resurrección <span class="nowrap">de F</span></h3>
+                <p>Revivido con las Esferas del Dragón, Freezer entrena para vengarse y lidera una nueva invasión.</p>
+                <span class="movie-villain">Antagonista: <strong>Freezer</strong></span>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- ================= DRAGON BALL SUPER (2) ================= -->
+        <section class="movie-era" data-movie-era="dragon-ball-super">
+          <div class="movie-era-head"><h2>Dragon Ball Super</h2><span>2 películas · 2018–2022</span></div>
+          <div class="movie-grid">
+
+            <article class="movie-card movie-card-featured" id="broly-super">
+              <div class="movie-poster-frame media-frame" data-fallback="Imagen no disponible">
+                <img src="img/peliculas/broly-super.webp" alt="Póster de Dragon Ball Super: Broly" loading="lazy" width="879" height="1246" decoding="async">
+              </div>
+              <div class="movie-card-body">
+                <span class="movie-year">2018</span>
+                <h3>Broly</h3>
+                <p>El origen de Broly se reescribe: un saiyajin exiliado con un poder que desafía todo lo conocido hasta ahora.</p>
+                <span class="movie-villain">Antagonista: <strong>Broly</strong></span>
+              </div>
+            </article>
+
+            <article class="movie-card movie-card-featured" id="super-hero">
+              <div class="movie-poster-frame media-frame" data-fallback="Imagen no disponible">
+                <img src="img/peliculas/super-hero.webp" alt="Póster de Dragon Ball Super: Super Hero" loading="lazy" width="1255" height="1800" decoding="async">
+              </div>
+              <div class="movie-card-body">
+                <span class="movie-year">2022</span>
+                <h3>Super Hero</h3>
+                <p>El Ejército Red Ribbon renace y crea a los Gamma, obligando a Piccolo y Gohan a tomar el protagonismo.</p>
+                <span class="movie-villain">Antagonista: <strong>Gamma 1, Gamma 2 y Magenta</strong></span>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <p class="movie-note"><strong>Nota:</strong> esta lista incluye únicamente los 21 largometrajes animados oficiales de Toei Animation. No incluye especiales de TV, OVAs, cortos ni el largometraje live-action <em>Dragonball Evolution</em> (2009), que no forma parte de la continuidad ni de la filmografía animada.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-glow" aria-hidden="true"></div>
+    <div class="container footer-top">
+      <div class="footer-about">
+        <a class="brand footer-brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true"><img src="img/logo/esfera-4-estrellas.webp" alt="" width="256" height="256"></span>
+          <span class="brand-text">DRAGON <strong>BALL</strong></span>
+        </a>
+        <p>Proyecto académico de programación web inspirado en Dragon Ball. Sitio fan-made, sin fines comerciales y no oficial.</p>
+      </div>
+      <div class="footer-nav" aria-label="Navegación secundaria">
+        <span>Explorar</span>
+        <a href="index.html">Inicio</a>
+        <a href="sagas.html">Sagas</a>
+        <a href="personajes.html">Personajes</a>
+        <a href="peliculas.html">Películas</a>
+        <a href="galeria.html">Galería</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+      <div class="footer-social">
+        <span>Redes</span>
+        <div class="socials" aria-label="Redes sociales">
+          <a href="https://x.com/DB_official_en" aria-label="X oficial de Dragon Ball" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/@dragonball_official" aria-label="YouTube oficial de Dragon Ball" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+          <a href="https://es.dragon-ball-official.com/" aria-label="Sitio oficial de Dragon Ball" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-globe" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span data-current-year>2026</span> Proyecto Dragon Ball</span>
+      <span>Sitio fan-made · Proyecto académico · No oficial</span>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>

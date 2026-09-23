@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galería editorial con lightbox del proyecto Dragon Ball.">
+  <meta name="theme-color" content="#07090d">
+  <title>Dragon Ball | Galería</title>
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="CSS/estilos.css">
+</head>
+<body data-page="galeria">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="nav-wrap container">
+      <a class="brand" href="index.html" aria-label="Dragon Ball — Inicio">
+        <span class="brand-mark" aria-hidden="true"><img src="img/logo/esfera-4-estrellas.webp" alt="" width="256" height="256"></span>
+        <span class="brand-text">DRAGON <strong>BALL</strong></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainMenu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="mainMenu" aria-label="Navegación principal">
+          <a href="index.html" class="nav-link">Inicio</a>
+          <div class="nav-item-dropdown" data-dropdown>
+            <button type="button" class="nav-link nav-link-dropdown" id="universoToggle" aria-haspopup="true" aria-expanded="false" aria-controls="universoMenu">Universo <i class="fa-solid fa-chevron-down nav-caret" aria-hidden="true"></i></button>
+            <div class="nav-dropdown-menu" id="universoMenu" role="menu">
+              <a href="sagas.html" class="nav-dropdown-link" role="menuitem">Sagas</a>
+              <a href="peliculas.html" class="nav-dropdown-link" role="menuitem">Películas</a>
+              <a href="personajes.html#transformaciones" class="nav-dropdown-link" role="menuitem">Transformaciones</a>
+            </div>
+          </div>
+          <a href="personajes.html" class="nav-link">Personajes</a>
+          <a href="galeria.html" class="nav-link active" aria-current="page">Galería</a>
+          <a href="contacto.html" class="nav-link">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="page-hero page-hero-gallery">
+      <div class="page-hero-lines" aria-hidden="true"></div>
+      <div class="container page-hero-layout">
+        <div class="page-hero-copy reveal">
+          <span class="meta-label">MOMENTOS · MUNDOS · BATALLAS</span>
+          <h1>Galería</h1>
+          <p>Batallas, transformaciones, viajes y escenarios que convierten cada era en una experiencia distinta.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-editorial section">
+      <div class="container">
+        <div class="gallery-intro reveal">
+          <div><span class="meta-label">ESCENAS DESTACADAS</span><h2>Energía en movimiento</h2></div>
+          <p>Combates, entrenamiento, mundos lejanos y energía en movimiento. Cada escena abre una parte diferente del universo.</p>
+        </div>
+        <div class="gallery-grid" id="galleryGrid">
+          <button class="gallery-item gallery-item-hero reveal" type="button" data-full="img/galeria/gallery-01.webp" data-caption="Choque de energía — Dos fuerzas se encuentran en pleno combate">
+            <div class="media-frame" data-fallback="Imagen no disponible"><img src="img/galeria/gallery-01.webp" alt="Dos guerreros enfrentan sus ataques de energía" width="1672" height="941" loading="lazy" decoding="async"></div><span class="gallery-overlay"><small>01 / BATALLA</small><strong>Choque de energía</strong><i class="fa-solid fa-expand"></i></span>
+          </button>
+          <button class="gallery-item gallery-item-tall reveal reveal-delay-1" type="button" data-full="img/galeria/gallery-02.webp" data-caption="Transformación — El instante en que la energía rompe el límite">
+            <div class="media-frame" data-fallback="Imagen no disponible"><img src="img/galeria/gallery-02.webp" alt="Guerrero transformándose dentro de un aura dorada" width="736" height="1015" loading="lazy" decoding="async"></div><span class="gallery-overlay"><small>02 / TRANSFORMACIÓN</small><strong>Romper el límite</strong><i class="fa-solid fa-expand"></i></span>
+          </button>
+          <button class="gallery-item gallery-item-wide reveal reveal-delay-2" type="button" data-full="img/galeria/gallery-03.webp" data-caption="Namek — Un mundo lejano bajo tres soles">
+            <div class="media-frame" data-fallback="Imagen no disponible"><img src="img/galeria/gallery-03.webp" alt="Planeta Namek con cielo verde, lagos y árboles azules" width="1672" height="941" loading="lazy" decoding="async"></div><span class="gallery-overlay"><small>03 / MUNDO</small><strong>Namek</strong><i class="fa-solid fa-expand"></i></span>
+          </button>
+          <button class="gallery-item gallery-item-wide reveal" type="button" data-full="img/galeria/gallery-04.webp" data-caption="Entrenamiento — La gravedad convierte la disciplina en resistencia">
+            <div class="media-frame" data-fallback="Imagen no disponible"><img src="img/galeria/gallery-04.webp" alt="Guerrero entrenando en una cámara de gravedad" width="1672" height="941" loading="lazy" decoding="async"></div><span class="gallery-overlay"><small>04 / ENTRENAMIENTO</small><strong>Gravedad</strong><i class="fa-solid fa-expand"></i></span>
+          </button>
+          <button class="gallery-item gallery-item-panorama reveal reveal-delay-1" type="button" data-full="img/galeria/gallery-05.webp" data-caption="Torneo — Dos luchadores se preparan para el combate">
+            <div class="media-frame" data-fallback="Imagen no disponible"><img src="img/galeria/gallery-05.webp" alt="Goku y Vegeta frente a frente rodeados de energía azul" width="1672" height="941" loading="lazy" decoding="async"></div><span class="gallery-overlay"><small>05 / TORNEO</small><strong>Frente a frente</strong><i class="fa-solid fa-expand"></i></span>
+          </button>
+          <button class="gallery-item gallery-item-portrait-compact reveal" type="button" data-full="img/galeria/gallery-06.webp" data-caption="Futuro — Una máquina del tiempo abre el camino hacia un futuro alterado">
+            <div class="media-frame" data-fallback="Imagen no disponible"><img src="img/galeria/gallery-06.webp" alt="Trunks viajando en una cápsula temporal" width="830" height="768" loading="lazy" decoding="async"></div><span class="gallery-overlay"><small>06 / FUTURO</small><strong>Viaje en el tiempo</strong><i class="fa-solid fa-expand"></i></span>
+          </button>
+          <button class="gallery-item gallery-item-tall reveal reveal-delay-1" type="button" data-full="img/galeria/gallery-07.webp" data-caption="Fusión — Dos guerreros combinan su poder en un solo luchador">
+            <div class="media-frame" data-fallback="Imagen no disponible"><img src="img/galeria/gallery-07.webp" alt="Vegito listo para el combate tras la fusión" width="1312" height="2048" loading="lazy" decoding="async"></div><span class="gallery-overlay"><small>07 / TÉCNICA</small><strong>Fusión</strong><i class="fa-solid fa-expand"></i></span>
+          </button>
+          <button class="gallery-item gallery-item-tall reveal reveal-delay-2" type="button" data-full="img/galeria/gallery-08.webp" data-caption="Sacrificio — Uno por todos en un momento decisivo de la batalla">
+            <div class="media-frame" data-fallback="Imagen no disponible"><img src="img/galeria/gallery-08.webp" alt="Majin Vegeta herido en un momento de sacrificio" width="1512" height="1440" loading="lazy" decoding="async"></div><span class="gallery-overlay"><small>08 / UNO POR TODOS</small><strong>Sacrificio</strong><i class="fa-solid fa-expand"></i></span>
+          </button>
+          <button class="gallery-item gallery-item-tall reveal" type="button" data-full="img/galeria/gallery-09.webp" data-caption="Guerreros — Distintas generaciones frente a un mismo desafío">
+            <div class="media-frame" data-fallback="Imagen no disponible"><img src="img/galeria/gallery-09.webp" alt="Goku en distintas etapas de combate lanzando un ataque de energía" width="1086" height="1448" loading="lazy" decoding="async"></div><span class="gallery-overlay"><small>09 / GUERREROS</small><strong>Una generación tras otra</strong><i class="fa-solid fa-expand"></i></span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lightboxCaption">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Cerrar imagen"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button" aria-label="Imagen anterior"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+    <div class="lightbox-content">
+      <img id="lightboxImage" src="" alt="">
+      <p id="lightboxCaption" aria-live="polite"><span id="lightboxCounter" aria-hidden="true"></span><span id="lightboxCaptionText"></span></p>
+    </div>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button" aria-label="Imagen siguiente"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-glow" aria-hidden="true"></div>
+    <div class="container footer-top">
+      <div class="footer-about">
+        <a class="brand footer-brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true"><img src="img/logo/esfera-4-estrellas.webp" alt="" width="256" height="256"></span>
+          <span class="brand-text">DRAGON <strong>BALL</strong></span>
+        </a>
+        <p>Proyecto académico de programación web inspirado en Dragon Ball. Sitio fan-made, sin fines comerciales y no oficial.</p>
+      </div>
+      <div class="footer-nav" aria-label="Navegación secundaria">
+        <span>Explorar</span>
+        <a href="index.html">Inicio</a>
+        <a href="sagas.html">Sagas</a>
+        <a href="personajes.html">Personajes</a>
+        <a href="peliculas.html">Películas</a>
+        <a href="galeria.html">Galería</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+      <div class="footer-social">
+        <span>Redes</span>
+        <div class="socials" aria-label="Redes sociales">
+          <a href="https://x.com/DB_official_en" aria-label="X oficial de Dragon Ball" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/@dragonball_official" aria-label="YouTube oficial de Dragon Ball" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+          <a href="https://es.dragon-ball-official.com/" aria-label="Sitio oficial de Dragon Ball" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-globe" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span data-current-year>2026</span> Proyecto Dragon Ball</span>
+      <span>Sitio fan-made · Proyecto académico · No oficial</span>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>
