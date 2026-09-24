@@ -10242,3 +10242,89 @@ body[data-page="galeria"] .lightbox.is-switching .lightbox-content {
     margin-top: -8px;
   }
 }
+
+
+/* =========================================================
+   AJUSTE MOBILE — PERSONAJES / SUAVIDAD DE CARGA
+   Correcciones puntuales posteriores a prueba real en celular.
+   ========================================================= */
+@media (max-width: 540px) {
+  /* Hero Personajes: los renders bajan un poco más para que el
+     corte inferior quede escondido bajo el borde del hero y se
+     perciba continuidad del cuerpo. */
+  body[data-page="personajes"] .page-hero-characters .character-hero-art .stack-a {
+    width: min(62%, 268px);
+    right: 4%;
+    bottom: -66px;
+  }
+
+  body[data-page="personajes"] .page-hero-characters .character-hero-art .stack-b {
+    width: min(51%, 220px);
+    left: 5%;
+    top: auto;
+    bottom: -64px;
+    opacity: .92;
+  }
+
+  /* En móvil queda un único sistema de reveal. Evita el doble reveal
+     (.reveal + .motion-reveal), que hacía que las cards aparecieran
+     de manera brusca o con saltos. */
+  .reveal,
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .motion-reveal {
+    opacity: 0;
+    transform: translate3d(0, 7px, 0);
+    transition:
+      opacity .62s cubic-bezier(.22,.61,.36,1),
+      transform .62s cubic-bezier(.22,.61,.36,1);
+    transition-delay: 0ms !important;
+    will-change: opacity, transform;
+  }
+
+  .motion-reveal.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    will-change: auto;
+  }
+
+  /* Las imágenes lazy hacen un fade corto cuando terminan de cargar,
+     evitando que aparezcan de golpe mientras se hace scroll. */
+  main img.mobile-image-fade {
+    opacity: 0;
+    transition: opacity .52s ease;
+  }
+
+  main img.mobile-image-fade.is-loaded {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 380px) {
+  /* Mantiene visibles a ambos personajes incluso en teléfonos angostos. */
+  body[data-page="personajes"] .page-hero-characters .character-hero-art .stack-b {
+    display: block;
+    width: min(47%, 178px);
+    left: 5%;
+    top: auto;
+    bottom: -54px;
+  }
+
+  body[data-page="personajes"] .page-hero-characters .character-hero-art .stack-a {
+    width: min(60%, 226px);
+    right: 3%;
+    bottom: -56px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main img.mobile-image-fade,
+  main img.mobile-image-fade.is-loaded {
+    opacity: 1 !important;
+    transition: none !important;
+  }
+}
