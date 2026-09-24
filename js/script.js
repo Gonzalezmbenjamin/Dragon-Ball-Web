@@ -603,6 +603,12 @@ function initTransformations() {
     } catch (_) {}
     if (token !== transitionToken) return;
 
+    // La imagen inicial de Transformaciones parte con src vacío en el HTML.
+    // initMediaFallbacks puede verla momentáneamente como ausente mientras se
+    // precarga la primera forma. Al confirmar que el bitmap nuevo ya está
+    // cargado/decodificado, retiramos explícitamente ese fallback.
+    if (frame) frame.classList.remove("media-missing");
+
     if (!animate || reducedMotion) {
       stage.classList.remove("is-swapping");
       return;
@@ -872,7 +878,10 @@ function initLightbox() {
 /* ---------- Placeholder prolijo cuando falta una imagen real ---------- */
 
 function initMediaFallbacks() {
-  const images = document.querySelectorAll(".media-frame img");
+  // transformImage es dinámico y arranca con src vacío a propósito; su propio
+  // módulo administra carga/error. Incluirlo acá genera un falso
+  // "Imagen no disponible" durante el primer render.
+  const images = document.querySelectorAll(".media-frame img:not(#transformImage)");
   if (!images.length) return;
 
   images.forEach((image) => {
