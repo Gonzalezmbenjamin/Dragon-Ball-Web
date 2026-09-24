@@ -15,6 +15,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="preload" as="image" href="img/personajes/goku.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="img/personajes/vegeta.webp" fetchpriority="high">
   <link rel="stylesheet" href="CSS/estilos.css">
 </head>
 <body data-page="personajes">
@@ -56,10 +58,10 @@
         </div>
         <div class="page-hero-art character-hero-art reveal reveal-delay-1" aria-hidden="true">
           <div class="character-hero-stack stack-b">
-            <img src="img/personajes/vegeta.webp" alt="" width="1024" height="1536" decoding="async">
+            <img src="img/personajes/vegeta.webp" alt="" width="1024" height="1536" loading="eager" fetchpriority="high" decoding="sync">
           </div>
           <div class="character-hero-stack stack-a">
-            <img src="img/personajes/goku.webp" alt="" width="1196" height="1315" fetchpriority="high" decoding="async">
+            <img src="img/personajes/goku.webp" alt="" width="1196" height="1315" loading="eager" fetchpriority="high" decoding="sync">
           </div>
         </div>
       </div>
@@ -74,7 +76,7 @@
 
         <div class="character-wall character-wall-heroes">
           <article class="premium-character premium-character-featured reveal" id="goku">
-            <div class="premium-character-image media-frame" data-fallback="Imagen no disponible"><img src="img/personajes/goku.webp" alt="Goku" width="1196" height="1315" loading="lazy" decoding="async"></div>
+            <div class="premium-character-image media-frame" data-fallback="Imagen no disponible"><img src="img/personajes/goku.webp" alt="Goku" width="1196" height="1315" loading="eager" fetchpriority="high" decoding="async"></div>
             <div class="premium-character-copy"><span class="fighter-index">01 / 06</span><small>SAIYAJIN · TIERRA</small><h3>Goku</h3><p>Su mayor rasgo no es una transformación concreta, sino la necesidad permanente de aprender y ponerse a prueba.</p><div class="fighter-data"><span><b>ORIGEN</b> Planeta Vegeta</span><span><b>RASGO</b> Disciplina</span></div></div>
           </article>
           <article class="premium-character reveal reveal-delay-1" id="vegeta">
