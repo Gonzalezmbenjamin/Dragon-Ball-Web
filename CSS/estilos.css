@@ -10018,3 +10018,227 @@ body[data-page="galeria"] .lightbox.is-switching .lightbox-content {
     opacity: 1 !important;
   }
 }
+
+/* =========================================================
+   AJUSTE RESPONSIVE FINAL — MOBILE
+   1) Menú hamburguesa fullscreen y opaco.
+   2) Transformaciones en grilla, sin scroll horizontal.
+   3) Render + ficha apilados y compactos en Personajes.
+   Desktop/tablet grande permanecen intactos.
+   ========================================================= */
+@media (max-width: 780px) {
+  body.menu-open .site-header {
+    background: #07090d;
+    border-color: rgba(255,255,255,.10);
+    backdrop-filter: none;
+  }
+
+  .site-header .brand {
+    position: relative;
+    z-index: 1004;
+  }
+
+  .menu-toggle {
+    z-index: 1005;
+  }
+
+  .main-nav {
+    inset: 0;
+    z-index: 1002;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    padding:
+      calc(var(--header-h) + 34px + env(safe-area-inset-top, 0px))
+      max(26px, env(safe-area-inset-right, 0px))
+      max(34px, env(safe-area-inset-bottom, 0px))
+      max(26px, env(safe-area-inset-left, 0px));
+    gap: 0;
+    align-items: stretch;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: #07090d;
+    box-shadow: none;
+    transform: translateX(100%);
+  }
+
+  .main-nav.open {
+    transform: translateX(0);
+  }
+
+  .main-nav > .nav-link,
+  .main-nav > .nav-item-dropdown {
+    flex: 0 0 auto;
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,.09);
+  }
+
+  .main-nav > .nav-link,
+  .main-nav .nav-link-dropdown {
+    min-height: 58px;
+    display: flex;
+    align-items: center;
+    padding: 14px 0;
+    color: #dce2ea;
+    font-size: 1.14rem;
+    letter-spacing: .10em;
+  }
+
+  .main-nav > .nav-link.active,
+  .main-nav > .nav-link[aria-current="page"],
+  .main-nav .nav-link-dropdown.active,
+  .main-nav .nav-item-dropdown.active > .nav-link-dropdown {
+    color: #fff;
+  }
+
+  .main-nav .nav-link-dropdown {
+    justify-content: space-between;
+  }
+
+  .main-nav .nav-dropdown-menu {
+    padding-left: 18px;
+  }
+
+  .main-nav .nav-dropdown-link {
+    padding: 11px 0;
+    font-size: .93rem;
+  }
+}
+
+@media (max-width: 540px) {
+  /* Las formas quedan visibles en una grilla; no hay desplazamiento lateral. */
+  body[data-page="personajes"] .transform-menu {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    flex-direction: initial;
+    flex-wrap: initial;
+    overflow: visible;
+    overscroll-behavior: auto;
+    scroll-snap-type: none;
+    scrollbar-width: auto;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,.09);
+  }
+
+  body[data-page="personajes"] .transform-tab {
+    width: 100%;
+    min-width: 0;
+    min-height: 72px;
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    scroll-snap-align: none;
+    padding: 14px 14px 15px;
+    border-right: 1px solid rgba(255,255,255,.07);
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    white-space: normal;
+    line-height: 1.05;
+    font-size: clamp(.98rem, 4.6vw, 1.16rem);
+    overflow-wrap: anywhere;
+  }
+
+  body[data-page="personajes"] .transform-tab:nth-child(2n) {
+    border-right: 0;
+  }
+
+  body[data-page="personajes"] .transform-tab:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    border-right: 0;
+  }
+
+  body[data-page="personajes"] .transform-tab::before {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+  }
+
+  body[data-page="personajes"] .transform-tab.active::before {
+    width: 100%;
+    height: 3px;
+  }
+
+  body[data-page="personajes"] .transform-tab:hover,
+  body[data-page="personajes"] .transform-tab.active {
+    padding-left: 14px;
+  }
+
+  body[data-page="personajes"] .transform-tab-tag {
+    margin-top: 5px;
+    font-size: .55rem;
+    line-height: 1.2;
+  }
+
+  /* El render deja de quedar colgado: ocupa todo el ancho y la ficha
+     queda inmediatamente debajo, con un solapamiento editorial mínimo. */
+  body[data-page="personajes"] .transform-stage {
+    width: 100%;
+    min-height: 0;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: hidden;
+    padding-top: 8px;
+  }
+
+  body[data-page="personajes"] .transform-stage::before,
+  body[data-page="personajes"] .transform-rings span {
+    left: 50%;
+    top: 41%;
+  }
+
+  body[data-page="personajes"] .transform-figure {
+    width: 100%;
+    height: clamp(320px, 92vw, 380px);
+    flex: 0 0 auto;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 8px 8px 0;
+  }
+
+  body[data-page="personajes"] .transform-figure img {
+    width: min(82%, 340px);
+    height: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+  }
+
+  body[data-page="personajes"] .transform-panel {
+    width: auto;
+    align-self: stretch;
+    margin: -10px 12px 12px;
+    padding: 20px 19px 19px;
+    position: relative;
+    z-index: 4;
+  }
+
+  body[data-page="personajes"] .transform-panel h3 {
+    font-size: clamp(2.45rem, 13vw, 3.35rem);
+    line-height: .88;
+  }
+
+  body[data-page="personajes"] .transform-panel > p {
+    font-size: .84rem;
+    line-height: 1.55;
+  }
+}
+
+@media (max-width: 380px) {
+  body[data-page="personajes"] .transform-figure {
+    height: clamp(300px, 94vw, 345px);
+  }
+
+  body[data-page="personajes"] .transform-figure img {
+    width: min(84%, 305px);
+  }
+
+  body[data-page="personajes"] .transform-panel {
+    margin-top: -8px;
+  }
+}
