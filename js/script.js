@@ -231,6 +231,7 @@ function initReveal() {
 
 function initMotionLayer() {
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const mobileLike = window.matchMedia("(max-width: 780px), (hover: none) and (pointer: coarse)").matches;
   const prepared = new Set();
 
   const prepare = (element, delay = 0) => {
@@ -263,7 +264,8 @@ function initMotionLayer() {
   staggerGroups.forEach(([containerSelector, itemSelector]) => {
     document.querySelectorAll(containerSelector).forEach((container) => {
       container.querySelectorAll(itemSelector).forEach((item, index) => {
-        prepare(item, Math.min(index % 6, 5) * 45);
+        const step = mobileLike ? 34 : 65;
+        prepare(item, Math.min(index % 6, 5) * step);
       });
     });
   });
@@ -284,8 +286,10 @@ function initMotionLayer() {
       });
     },
     {
-      threshold: 0.1,
-      rootMargin: "0px 0px -5% 0px"
+      threshold: mobileLike ? 0.01 : 0.055,
+      // En móvil empezamos el reveal antes de que el bloque entre en pantalla.
+      // Así el usuario ve el movimiento ya en curso y no una aparición súbita.
+      rootMargin: mobileLike ? "0px 0px -5% 0px" : "0px 0px -2% 0px"
     }
   );
 
@@ -300,7 +304,7 @@ function initMobileImageFade() {
   if (!isMobileLike) return;
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const images = document.querySelectorAll('main img[loading="lazy"]');
+  const images = document.querySelectorAll('main img[loading="lazy"]:not(#transformImage)');
 
   images.forEach((img) => {
     img.classList.add("mobile-image-fade");
@@ -477,51 +481,119 @@ function initTransformations() {
   }
 
   let changeTimer;
+  let transitionToken = 0;
   let currentCharacter = "goku";
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const preloadCache = new Map();
 
-  // Las transformaciones se cargan bajo demanda. Evita descargar de entrada
-  // todas las formas de todos los personajes y reduce el peso inicial.
+  // El render principal de Transformaciones nunca debe depender de lazy-load.
+  // Las formas cambian por interacción directa, así que priorizamos la respuesta.
+  image.loading = "eager";
+  image.decoding = "async";
+  try { image.fetchPriority = "high"; } catch (_) {}
 
-  const applyForm = (characterKey, form, animate) => {
+  const preloadImage = (src) => {
+    if (preloadCache.has(src)) return preloadCache.get(src);
+
+    const promise = new Promise((resolve) => {
+      const loader = new Image();
+      loader.decoding = "async";
+      loader.onload = async () => {
+        try {
+          if (typeof loader.decode === "function") await loader.decode();
+        } catch (_) {}
+        resolve(true);
+      };
+      loader.onerror = () => resolve(false);
+      loader.src = src;
+    });
+
+    preloadCache.set(src, promise);
+    return promise;
+  };
+
+  const warmCharacter = (characterKey) => {
+    const character = TRANSFORMATION_DATA[characterKey];
+    if (!character) return;
+    character.forms.forEach((form) => preloadImage(form.image));
+  };
+
+  // Precarga progresiva: primero Goku (estado inicial), luego el resto cuando
+  // el navegador queda libre. Evita el micro-lag al tocar una forma por primera vez.
+  warmCharacter("goku");
+  const warmRemaining = () => {
+    Object.keys(TRANSFORMATION_DATA).forEach((key) => warmCharacter(key));
+  };
+  if (!navigator.connection?.saveData && "requestIdleCallback" in window) {
+    window.requestIdleCallback(warmRemaining, { timeout: 1800 });
+  } else if (!navigator.connection?.saveData) {
+    window.setTimeout(warmRemaining, 700);
+  }
+
+  // Cambio de forma con doble buffer lógico:
+  // 1) ocultamos INMEDIATAMENTE el render anterior (sin fade-out lento),
+  // 2) precargamos/decodificamos la nueva imagen,
+  // 3) recién entonces la mostramos con un fade-in corto y fluido.
+  // Esto evita que SSJ1 siga visible después de tocar SSJ2.
+  const applyForm = async (characterKey, form, animate) => {
     const characterLabel = TRANSFORMATION_DATA[characterKey].label;
-
-    section.style.setProperty("--aura-rgb", form.rgb);
-    section.style.setProperty("--accent-live", form.accent);
-    section.dataset.form = form.id;
-
-    const render = () => {
-      image.src = form.image;
-      image.alt = `${characterLabel} — ${form.name}`;
-      name.textContent = form.name;
-      description.textContent = form.copy;
-      code.textContent = form.code;
-      ki.textContent = form.ki;
-      stage.classList.remove("is-changing");
-
-      if (frame) {
-        frame.classList.remove("media-missing");
-        frame.dataset.fallback = "Imagen no disponible";
-
-        if (image.complete && image.naturalWidth === 0) {
-          frame.classList.add("media-missing");
-        } else {
-          image.addEventListener(
-            "error",
-            () => frame.classList.add("media-missing"),
-            { once: true }
-          );
-        }
-      }
-    };
+    const token = ++transitionToken;
 
     window.clearTimeout(changeTimer);
 
-    if (animate) {
-      stage.classList.add("is-changing");
-      changeTimer = window.setTimeout(render, 190);
-    } else {
-      render();
+    // Estado y texto responden al click en el mismo frame.
+    section.style.setProperty("--aura-rgb", form.rgb);
+    section.style.setProperty("--accent-live", form.accent);
+    section.dataset.form = form.id;
+    name.textContent = form.name;
+    description.textContent = form.copy;
+    code.textContent = form.code;
+    ki.textContent = form.ki;
+
+    if (frame) {
+      frame.classList.remove("media-missing");
+      frame.dataset.fallback = "Imagen no disponible";
     }
+
+    if (animate && !reducedMotion) {
+      // is-swapping oculta el bitmap viejo SIN transición.
+      stage.classList.add("is-swapping");
+    } else {
+      stage.classList.remove("is-swapping");
+    }
+
+    // Arrancamos la carga antes de tocar el src visible para que el navegador
+    // no mantenga el bitmap anterior mientras decodifica el siguiente.
+    const loaded = await preloadImage(form.image);
+    if (token !== transitionToken) return;
+
+    image.alt = `${characterLabel} — ${form.name}`;
+    image.src = form.image;
+
+    if (!loaded) {
+      if (frame) frame.classList.add("media-missing");
+      stage.classList.remove("is-swapping");
+      return;
+    }
+
+    // Espera de decode del elemento visible cuando el navegador la soporte.
+    try {
+      if (typeof image.decode === "function") await image.decode();
+    } catch (_) {}
+    if (token !== transitionToken) return;
+
+    if (!animate || reducedMotion) {
+      stage.classList.remove("is-swapping");
+      return;
+    }
+
+    // Forzamos un frame oculto con la imagen NUEVA y después la hacemos entrar.
+    // No hay timeout perceptible ni forma anterior visible.
+    void image.offsetWidth;
+    window.requestAnimationFrame(() => {
+      if (token !== transitionToken) return;
+      stage.classList.remove("is-swapping");
+    });
   };
 
   const renderCharacter = (characterKey, animate) => {
@@ -583,6 +655,7 @@ function initTransformations() {
       tab.classList.add("active");
       tab.setAttribute("aria-selected", "true");
       tab.tabIndex = 0;
+      warmCharacter(tab.dataset.character);
       renderCharacter(tab.dataset.character, true);
     });
 
