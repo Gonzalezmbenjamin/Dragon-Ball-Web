@@ -10877,3 +10877,53 @@ body[data-page="peliculas"] .movie-watch-note {
     transform: none;
   }
 }
+
+
+/* ============================================================
+   LA RESURRECCIÓN DE F — card vertical integrada al grid
+   Mantiene el póster completo sin formato horizontal especial.
+============================================================ */
+body[data-page="peliculas"] #resurrection-f {
+  display: block;
+  grid-column: auto;
+  align-self: stretch;
+}
+
+body[data-page="peliculas"] #resurrection-f .movie-poster-frame {
+  aspect-ratio: 2 / 3;
+  height: auto;
+  min-width: 0;
+  display: block;
+  background: linear-gradient(150deg, var(--panel), var(--panel-2));
+}
+
+body[data-page="peliculas"] #resurrection-f .movie-poster-frame img {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
+}
+
+body[data-page="peliculas"] #resurrection-f .movie-card-body {
+  display: block;
+  padding: 14px 16px 18px;
+}
+
+body[data-page="peliculas"] #resurrection-f .movie-card-body h3 {
+  font-size: 20px;
+  margin: 4px 0 6px;
+  line-height: 1.15;
+}
+
+body[data-page="peliculas"] #resurrection-f .movie-card-body p {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0 0 8px;
+}
+
+@media (max-width: 760px) {
+  body[data-page="peliculas"] #resurrection-f {
+    grid-column: auto;
+  }
+}
