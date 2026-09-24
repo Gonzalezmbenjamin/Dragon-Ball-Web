@@ -236,6 +236,13 @@ function initMotionLayer() {
 
   const prepare = (element, delay = 0) => {
     if (!element || prepared.has(element)) return;
+
+    // Muchos bloques de Personajes ya vienen con .reveal desde el HTML.
+    // Volver a ocultarlos desde JS después del primer paint produce el
+    // pequeño flash visible en desktop (aparece -> desaparece -> vuelve).
+    // En esos casos dejamos actuar solo al reveal original.
+    if (element.classList.contains("reveal")) return;
+
     prepared.add(element);
     element.classList.add("motion-reveal");
     element.style.setProperty("--motion-delay", `${delay}ms`);
