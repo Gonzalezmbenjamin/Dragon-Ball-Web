@@ -10794,8 +10794,8 @@ body[data-page="galeria"] .lightbox.is-switching .lightbox-content {
 
 
 /* ============================================================
-   PRUEBA "DÓNDE VERLA" — Películas
-   Enlaces legales externos sin alterar la composición de cards.
+   DÓNDE VERLA — Películas
+   Enlaces legales externos; no modifica la estructura visual.
 ============================================================ */
 body[data-page="peliculas"] .movie-watch-link {
   display: inline-flex;
@@ -10843,10 +10843,24 @@ body[data-page="peliculas"] .movie-watch-link:focus-visible .movie-watch-arrow {
   transform: translate(2px, -2px);
 }
 
+body[data-page="peliculas"] .movie-watch-note {
+  margin: 0 auto 20px;
+  max-width: 1180px;
+  padding-inline: 20px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
 @media (max-width: 680px) {
   body[data-page="peliculas"] .movie-watch-link {
     margin-top: 12px;
     padding: 10px 13px;
+  }
+
+  body[data-page="peliculas"] .movie-watch-note {
+    margin-bottom: 16px;
+    padding-inline: 16px;
   }
 }
 
