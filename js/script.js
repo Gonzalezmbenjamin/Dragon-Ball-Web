@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initNavDropdown();
   initReveal();
   initMotionLayer();
+  initMobileImageFade();
   initParallax();
   initSagaVisualEnhancements();
   initTransformations();
@@ -289,6 +290,40 @@ function initMotionLayer() {
   );
 
   prepared.forEach((element) => observer.observe(element));
+}
+
+
+/* ---------- Fade de imágenes en móvil ---------- */
+
+function initMobileImageFade() {
+  const isMobileLike = window.matchMedia("(max-width: 780px), (hover: none) and (pointer: coarse)").matches;
+  if (!isMobileLike) return;
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const images = document.querySelectorAll('main img[loading="lazy"]');
+
+  images.forEach((img) => {
+    img.classList.add("mobile-image-fade");
+
+    const show = () => {
+      if (reducedMotion) {
+        img.classList.add("is-loaded");
+        return;
+      }
+      window.requestAnimationFrame(() => {
+        window.requestAnimationFrame(() => img.classList.add("is-loaded"));
+      });
+    };
+
+    if (img.complete && img.naturalWidth > 0) {
+      show();
+    } else {
+      img.addEventListener("load", show, { once: true });
+      // Si una imagen falla, no queda invisible: el sistema de fallback
+      // existente se ocupa de mostrar el placeholder correspondiente.
+      img.addEventListener("error", () => img.classList.add("is-loaded"), { once: true });
+    }
+  });
 }
 
 /* ---------- Parallax sutil ---------- */
