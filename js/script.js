@@ -246,7 +246,12 @@ function initMotionLayer() {
     .querySelectorAll(
       ".home-intro-layout, .catalog-intro, .transform-header, .transform-console, " +
       ".movie-era-head, .gallery-intro, .contact-page-copy, .contact-form-panel, " +
-      ".saga-endcap-layout, .footer-top"
+      ".saga-endcap-layout, .footer-top, " +
+      "body[data-page=\"inicio\"] .split-heading, " +
+      "body[data-page=\"inicio\"] .editorial-heading, " +
+      "body[data-page=\"inicio\"] .center-action, " +
+      "body[data-page=\"inicio\"] .manifesto-copy, " +
+      "body[data-page=\"inicio\"] .manifesto-stats"
     )
     .forEach((element) => prepare(element));
 
@@ -269,6 +274,22 @@ function initMotionLayer() {
       });
     });
   });
+
+  // En Inicio, el stagger móvil necesita más respiración: las cards entran
+  // de manera progresiva en vez de aparecer casi todas a la vez.
+  if (mobileLike && document.body?.dataset.page === "inicio") {
+    [
+      [".preview-sagas", ".preview-saga"],
+      [".character-strips", ".character-strip"],
+      [".home-movies-grid", ".home-movie-card"]
+    ].forEach(([containerSelector, itemSelector]) => {
+      document.querySelectorAll(containerSelector).forEach((container) => {
+        container.querySelectorAll(itemSelector).forEach((item, index) => {
+          item.style.setProperty("--motion-delay", `${Math.min(index, 4) * 86}ms`);
+        });
+      });
+    });
+  }
 
   if (!prepared.size) return;
 
