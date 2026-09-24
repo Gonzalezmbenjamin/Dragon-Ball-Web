@@ -10791,3 +10791,75 @@ body[data-page="galeria"] .lightbox.is-switching .lightbox-content {
     transition: none !important;
   }
 }
+
+
+/* ============================================================
+   PRUEBA "DÓNDE VERLA" — Películas
+   Enlaces legales externos sin alterar la composición de cards.
+============================================================ */
+body[data-page="peliculas"] .movie-watch-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: max-content;
+  max-width: 100%;
+  margin-top: 14px;
+  padding: 9px 12px;
+  border: 1px solid color-mix(in srgb, var(--movie-era-accent, var(--orange)) 58%, transparent);
+  border-radius: 999px;
+  color: var(--text);
+  background: color-mix(in srgb, var(--movie-era-accent, var(--orange)) 10%, transparent);
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  line-height: 1;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    transform .28s var(--ease),
+    border-color .28s var(--ease),
+    background-color .28s var(--ease),
+    box-shadow .28s var(--ease);
+}
+
+body[data-page="peliculas"] .movie-watch-link:hover,
+body[data-page="peliculas"] .movie-watch-link:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--movie-era-accent, var(--orange));
+  background: color-mix(in srgb, var(--movie-era-accent, var(--orange)) 18%, transparent);
+  box-shadow: 0 8px 18px rgba(0,0,0,.16);
+  outline: none;
+}
+
+body[data-page="peliculas"] .movie-watch-arrow {
+  display: inline-block;
+  transition: transform .28s var(--ease);
+}
+
+body[data-page="peliculas"] .movie-watch-link:hover .movie-watch-arrow,
+body[data-page="peliculas"] .movie-watch-link:focus-visible .movie-watch-arrow {
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 680px) {
+  body[data-page="peliculas"] .movie-watch-link {
+    margin-top: 12px;
+    padding: 10px 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-page="peliculas"] .movie-watch-link,
+  body[data-page="peliculas"] .movie-watch-arrow {
+    transition: none;
+  }
+
+  body[data-page="peliculas"] .movie-watch-link:hover,
+  body[data-page="peliculas"] .movie-watch-link:focus-visible,
+  body[data-page="peliculas"] .movie-watch-link:hover .movie-watch-arrow,
+  body[data-page="peliculas"] .movie-watch-link:focus-visible .movie-watch-arrow {
+    transform: none;
+  }
+}
